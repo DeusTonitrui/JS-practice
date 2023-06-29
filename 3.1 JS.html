@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+                function convertArrToObj(arr) {
+          if (!Array.isArray(arr)) {
+            return {};
+          }
+        
+          return arr.reduce((obj, value, index) => {
+            obj[index] = value;
+            return obj;
+          }, {});
+        }
+        const arr = [1, null, 'test', undefined];
+        const obj = convertArrToObj(arr);
+        console.log(obj); // Вывод: { 0: 1, 1: null, 2: 'test', 3: undefined }
+        </script>
+    </body>
+</html>

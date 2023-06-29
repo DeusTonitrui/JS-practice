@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+              function countFromArr(arr) {
+        if (!Array.isArray(arr)) {
+          return {};
+        }
+    
+        const countObj = {};
+    
+        for (let i = 0; i < arr.length; i++) {
+          const value = arr[i];
+          if (countObj[value] === undefined) {
+            countObj[value] = 1;
+          } else {
+            countObj[value]++;
+          }
+        }
+        return countObj;
+        }
+        const arr = [1, 1, 1, 'test', 'test'];
+        const res = countFromArr(arr);
+        console.log(res); // Вывод: { 1: 3, test: 2 }
+        </script>
+    </body>
+</html>

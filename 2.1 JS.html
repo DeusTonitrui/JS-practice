@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function count(num) {
+        if (typeof num !== 'number') {
+            return 0;
+        }
+
+         let sum = num;
+
+         function nextCount(nextNum) {
+           if (typeof nextNum === 'number') {
+             sum += nextNum;
+         }
+            return nextCount;
+        }
+
+        nextCount.toString = function () {
+            return sum;
+        };
+
+        return nextCount;
+        }
+        console.log(count(3)(2)(1)(5)(7).toString());             // Вывод: 18
+        console.log(count(3)(null)(1)('asad')().toString());     // Вывод: 4
+        </script>
+    </body>
+</html>
